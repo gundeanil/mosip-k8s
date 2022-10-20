@@ -9,17 +9,17 @@ CURR_DIR=$(pwd)
 
 if [ "$1" != "wg" ]; then
   if [ -z "$rancher_nginx_ip" ]; then
-    echo -en "=====>\n The following internal ip will have to be DNS-mapped to rancher.xyz.net and iam.xyz.net.\n"
+    echo -en "=====>\n The following internal ip will have to be DNS-mapped to rancher.aptiway.net and iam.aptiway.net.\n"
     echo -en "Give the internal interface ip of this node here. Run \`ip a\` to get all the interface addresses (without any whitespaces) : "
     read rancher_nginx_ip
   fi
   if [ -z "$rancher_nginx_certs" ]; then
-    echo -en "=====>\nGive path for SSL Certificate for rancher.xyz.net (without any whitespaces) : "
+    echo -en "=====>\nGive path for SSL Certificate for rancher.aptiway.net (without any whitespaces) : "
     read rancher_nginx_certs
     rancher_nginx_certs=$(sed 's/\//\\\//g' <<< $rancher_nginx_certs)
   fi
   if [ -z "$rancher_nginx_cert_key" ]; then
-    echo -en "=====>\nGive path for SSL Certificate Key for rancher.xyz.net (without any whitespaces) : "
+    echo -en "=====>\nGive path for SSL Certificate Key for rancher.aptiway.net (without any whitespaces) : "
     read rancher_nginx_cert_key
     rancher_nginx_cert_key=$(sed 's/\//\\\//g' <<< $rancher_nginx_cert_key)
   fi
